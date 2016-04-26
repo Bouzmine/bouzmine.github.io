@@ -94,26 +94,27 @@
 									<h2 class="major">Articles récents</h2>
 									<p>Voici les dernières publications sur mon blog : </p>
 									<section class="features">
+										{% for post in site.posts limit:4 %}
 										<article>
-											<h3 class="major">Git</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">En savoir plus</a>
+											<h3 class="major">{{post.title}}</h3>
+											<p>{{ post.date | date: '%d' }} {% assign m = post.date | date: "%-m" %}
+											{% case m %}
+												{% when '1' %}janvier
+												{% when '2' %}février
+												{% when '3' %}mars
+												{% when '4' %}avril
+												{% when '5' %}mai
+												{% when '6' %}juin
+												{% when '7' %}juillet
+												{% when '8' %}août
+												{% when '9' %}septembre
+												{% when '10' %}octobre
+												{% when '11' %}novembre
+												{% when '12' %}décembre
+											{% endcase %} {{ post.date | date: '%Y' }}</p>
+											<a href="{{ post.url }}" class="special">Lire</a>
 										</article>
-										<article>
-											<h3 class="major">GitHub</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">En savoir plus</a>
-										</article>
-										<article>
-											<h3 class="major">Git</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">En savoir plus</a>
-										</article>
-										<article>
-											<h3 class="major">GitHub</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">En savoir plus</a>
-										</article>
+										{% endfor %}
 									</section>
 									<ul class="actions">
 										<li><a href="http://bouzmine.github.io/blog" class="button">Voir plus</a></li>
