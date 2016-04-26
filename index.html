@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE HTML>
 <!--
 	Solid State by HTML5 UP
@@ -94,7 +96,7 @@
 									<h2 class="major">Articles récents</h2>
 									<p>Voici les dernières publications sur mon blog : </p>
 									<section class="features">
-										{% for post in site.posts limit:4 %}
+										{% for post in site.posts %}
 										<article>
 											<h3 class="major">{{post.title}}</h3>
 											<p>{{ post.date | date: '%d' }} {% assign m = post.date | date: "%-m" %}
