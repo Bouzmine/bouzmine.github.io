@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Blog de Francis Clavette</title>
+		<title>{{ page.title }} - Blog de Francis Clavette</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -46,7 +46,21 @@
 						<header>
 							<div class="inner">
 								<h2>{{ page.title }}</h2>
-								<p>{{ page.date | date_to_string }}</p>
+								<p>{{ page.date | date: '%d' }} {% assign m = page.date | date: "%-m" %}
+		   {% case m %}
+			 {% when '1' %}janvier
+			 {% when '2' %}février
+			 {% when '3' %}mars
+			 {% when '4' %}avril
+			 {% when '5' %}mai
+			 {% when '6' %}juin
+			 {% when '7' %}juillet
+			 {% when '8' %}août
+			 {% when '9' %}septembre
+			 {% when '10' %}octobre
+			 {% when '11' %}novembre
+			 {% when '12' %}décembre
+		   {% endcase %} {{ page.date | date: '%Y' }}</p>
 							</div>
 						</header>
 
