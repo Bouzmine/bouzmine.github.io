@@ -1810,6 +1810,11 @@
 		font-size: 0.7em;
 	}
 
+	.blog h1, .blog h2, .blog h3, .blog h4, .blog h5, .blog h6 {
+		padding-bottom: 1em;
+		border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+	}
+
 	@media screen and (max-width: 736px) {
 
 		h2 {
@@ -2371,13 +2376,17 @@
 		ul.contact {
 			list-style: none;
 			padding: 0;
+			text-align: center;
 		}
 
 			ul.contact li {
+				display: inline-block;
 				text-decoration: none;
 				margin: 2.5em 0 0 0;
-				padding: 0 0 0 3.25em;
+				padding: 0 0 0 1.25em;
 				position: relative;
+				text-align: center;
+				width: 50%;
 			}
 
 				ul.contact li:before {
@@ -3575,7 +3584,7 @@
 	}
 
 		#footer .inner > * {
-			width: 100%;
+			width: 50%;
 		}
 
 		#footer .inner form {
@@ -3584,7 +3593,7 @@
 		}
 
 		#footer .inner .contact {
-			width: calc(50% - 1.5em);
+			width: calc(100% - 1.5em);
 		}
 
 		#footer .inner .copyright {
