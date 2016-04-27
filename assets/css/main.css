@@ -3710,3 +3710,22 @@
 		}
 
 	}
+
+
+.blog p img:only-child {
+	display: block;
+	margin: 0 0 2em 0;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.blog p img:not(:only-child) {
+	border-radius: 5px;
+	border: 0;
+	display: block;
+	position: relative;
+	float: left;
+	padding: 0 1.5em 1em 0;
+	top: 0.25em;
+	max-width: 40%;
+}
